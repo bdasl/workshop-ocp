@@ -9,9 +9,11 @@ if ($conn->connect_error) {
 }
 $result = $conn->query("SELECT nome FROM cidade");
 if ($result->num_rows > 0) {
+    echo "<li>"
     while($row = $result->fetch_assoc()) {
-        echo "<h3>" . $row["nome"] . "</h3>";
+        echo "<ul>" . $row["nome"] . "</ul>";
     }
+    echo "</li>
 } else {
     echo "0 results";
 }
